@@ -5,8 +5,7 @@
 String.prototype.interp = function(v) {
 	var s = this.valueOf();
 	
-	if (!s || s.length === 0)
-		return '';
+	if (!s || s.length === 0) return '';
 
 	function _gv(_n, _v) {
 		var _s = '';
@@ -32,16 +31,20 @@ String.prototype.interp = function(v) {
 			continue;
 		}
 		
-		if (!isNaN(c)) n = parseInt(c);
+		if (!isNaN(c) && b) n = parseInt(c);
 		else {
+			var e = (s[i - 1] === '\\');
 			switch (c) {
+				case '\\':
+					if (e) ns += c;
+					break;
 				case '{':
-					if (s[i - 1] === '\\') ns += c;
+					if (e) ns += c;
 					else b = true;
 					break;
 				case '}':
-					if (s[i - 1] === '\\') ns += c;
-					else {
+					if (e) ns += c;
+					else if (b) {
 						ns += _gv(n, v);
 						b = false;
 						n = -1;
