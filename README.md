@@ -4,7 +4,7 @@ So here's **interp.js**.
 
 InterpJS appends a single function to the String object so that it supports simple index-based interpolation.
 
-You can call interp and pass parameters *like this*:
+You can call `interp()` and pass parameters *like this*:
 
 `'I wish I could write {0} {1}/{2}. :S'.interp('JavaScript', 24, 7);`
 
