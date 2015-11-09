@@ -2,7 +2,9 @@
 
 So here's **interp.js**.
 
-It's a single function added to the String object which you can call *like this*:
+InterpJS appends a single function to the String object so that it supports simple index-based interpolation.
+
+You can call interp and pass parameters *like this*:
 
 `'I wish I could write {0} {1}/{2}. :S'.interp('JavaScript', 24, 7);`
 
@@ -10,7 +12,7 @@ It's a single function added to the String object which you can call *like this*
 
 `'I wish I could write JavaScript 24/7. :S'`
 
-Or *like this*:
+Or you can pass an array *like this*:
 
 `'The {0} black {1} jumped over the other {1} {0}ly.'.interp(['quick', 'fox']);`
 
