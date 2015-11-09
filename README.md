@@ -1,4 +1,4 @@
-## I wanted C#-style string interpolation for JavaScript and was bored.
+## I wanted C#-ish string interpolation for JavaScript and was bored.
 
 So here's **interp.js**.
 
