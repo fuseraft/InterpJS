@@ -7,17 +7,6 @@ String.prototype.interp = function(v) {
 	
 	if (!s || s.length === 0) return '';
 
-	function _gv(_n, _v) {
-		var _s = '';
-		try {
-			_s = _v[_n];
-		}
-		catch (err) {
-			console.error(err.message);
-		}
-		return _s;
-	}
-
 	var ns = '',
 		b = false,
 		n = -1,
@@ -45,7 +34,12 @@ String.prototype.interp = function(v) {
 				case '}':
 					if (e) ns += c;
 					else if (b) {
-						ns += _gv(n, v);
+						try {
+							ns += v[n];
+						}
+						catch (err) {
+							console.error(err.message);
+						}
 						b = false;
 						n = -1;
 					}
