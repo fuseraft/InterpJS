@@ -34,12 +34,7 @@ String.prototype.interp = function(v) {
 				case '}':
 					if (e) ns += c;
 					else if (b) {
-						try {
-							ns += v[n];
-						}
-						catch (err) {
-							console.error(err.message);
-						}
+						ns += v[n];
 						b = false;
 						n = -1;
 					}
