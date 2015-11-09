@@ -4,13 +4,15 @@
 
 String.prototype.interp = function(v) {
 	var s = this.valueOf(),
-		al = arguments.length,
 		a = [],
 		ns = '',
 		b = false,
-		n = -1,
+		e = false,
 		l = s.length,
-		i = 0;
+		al = arguments.length,
+		i = 0,
+		n = -1,
+		c = '';
 	
 	if (!s || s.length === 0) return '';
 	if (v.constructor === Array)
@@ -20,7 +22,7 @@ String.prototype.interp = function(v) {
 			a.push(arguments[i]);
 
 	for (i = 0; i < l; i++) {
-		var c = s[i];
+		c = s[i];
 	
 		if (' \t\n\r\v'.indexOf(c) > -1) {
 			ns += c;
@@ -29,7 +31,7 @@ String.prototype.interp = function(v) {
 		
 		if (!isNaN(c) && b) n = parseInt(c);
 		else {
-			var e = (s[i - 1] === '\\');
+			e = (s[i - 1] === '\\');
 			switch (c) {
 				case '\\':
 					if (e) ns += c;
