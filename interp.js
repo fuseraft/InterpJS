@@ -3,16 +3,23 @@
  */
 
 String.prototype.interp = function(v) {
-	var s = this.valueOf();
-	
-	if (!s || s.length === 0) return '';
-
-	var ns = '',
+	var s = this.valueOf(),
+		al = arguments.length,
+		a = [],
+		ns = '',
 		b = false,
 		n = -1,
-		l = s.length;
+		l = s.length,
+		i = 0;
+	
+	if (!s || s.length === 0) return '';
+	if (v.constructor === Array)
+		a = v;
+	else
+		for (i = 0; i < al; i++)
+			a.push(arguments[i]);
 
-	for (var i = 0; i < l; i++) {
+	for (i = 0; i < l; i++) {
 		var c = s[i];
 	
 		if (' \t\n\r\v'.indexOf(c) > -1) {
@@ -34,7 +41,7 @@ String.prototype.interp = function(v) {
 				case '}':
 					if (e) ns += c;
 					else if (b) {
-						ns += v[n];
+						ns += a[n];
 						b = false;
 						n = -1;
 					}
