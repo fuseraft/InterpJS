@@ -14,7 +14,7 @@ String.prototype.interp = function(v) {
 		n = -1,
 		c = '';
 	
-	if (!s || s.length === 0) return '';
+	if (!s || l === 0) return '';
 	if (v.constructor === Array)
 		a = v;
 	else
