@@ -18,4 +18,4 @@ Or you can pass an array *like this*:
 
 *which returns*:
 
-`the quick black fox jumped over the other fox quickly.`
+`The quick black fox jumped over the other fox quickly.`
