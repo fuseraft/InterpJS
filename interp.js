@@ -29,10 +29,8 @@
                 ins += c;
                 continue;
             }
-            if (!isNaN(c) && b) {
-                //n = parseInt(c);
+            if (!isNaN(c) && b)
                 ns += c;
-            }
             else {
                 e = (s[i - 1] === '\\');
                 switch (c) {
