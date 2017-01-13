@@ -2,6 +2,8 @@
 
 So here's **interp.js**.
 
+And here's a [fiddle](https://jsfiddle.net/29j1v7gy/5/) to see it in action.
+
 InterpJS appends a single function to the String object so that it supports simple index-based interpolation.
 
 You can call `interp()` and pass parameters *like this*:
