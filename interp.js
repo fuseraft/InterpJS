@@ -17,6 +17,7 @@
             c = '';
 
         if (!s || l === 0) return '';
+		if (!v) return s;
 
         if (v.constructor === Array) a = v;
         else
